@@ -4,6 +4,8 @@ from random import *
 pygame.init()
 new_time = 0
 
+amount_win_points = 5 #количество очков для победы
+
 window = pygame.display.set_mode(500,500)
 clock = pygame.time.Clock()
 window.fill((0, 213, 255))
@@ -120,7 +122,7 @@ while True:
         pygame.display.update() # Сначала принудительно обновляем экран
         break # Теперь выходим из цикла, игра замрет на этом экране
 
-    if points >= 1: # Лучше поставить 5 очков, как в оригинале
+    if points >= amount_win_points: # Лучше поставить 5 очков, как в оригинале
         win = Label(0, 0, 500, 500, (200, 255, 200)) # Светло-зеленый фон
         win.set_text('Вы выиграли!', 50, (0, 100, 0))
         win.draw(50, 200)
